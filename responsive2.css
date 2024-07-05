@@ -1,0 +1,26 @@
+@media (max-width: 900px) {
+    .menu {
+        display: none; /* Hide menu items by default on small screens */
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #f9f9f9;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    .menu.open {
+        display: flex; /* Display menu items when menu is open */
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .signIn {
+        margin: 20px 0;
+    }
+}

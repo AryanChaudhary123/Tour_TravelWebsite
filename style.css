@@ -1,0 +1,680 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap')
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+html{
+    font-size: 16px;
+}
+/*===utility start===*/
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+a{
+    text-decoration: none;
+}
+.heading-normal-text{
+    font-size: 1rem;
+    letter-spacing: 6px;
+    color: var(primary-color);
+    font-family: "poppins";
+}
+.headings{
+    font-size: 2rem;
+    font-family: "ubuntu";
+    padding-bottom: 2rem;
+    letter-spacing: 2px;
+}
+.headings span{
+    color: skyblue;
+}
+.secondary-headings{
+    font-size: 2.5rem;
+    font-family: "ubuntu";
+    padding: 1rem 0;
+}
+.lead{
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+}
+.primary-btn{
+    width: 50%;
+    outline: none;
+    background-color: skyblue;
+    border: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+/*====utility close====*/
+header{
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100;
+    z-index: 6;
+    transition: 0.3s ease-in-out;
+    display: flex;
+}
+
+header.sticky{
+    background: skyblue;
+}
+.logo img{
+    width: 8%;
+    height: 12%;
+    object-fit: cover;
+}
+.logo5{
+    width: 20%;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+nav ul li{
+    margin: 0 0.9rem;
+    position: relative;
+}
+nav ul li a{
+    color: white;
+    font-size: 1.1rem;
+}
+nav ul li::before{
+    content: "";
+    position: absolute;
+    top: 30px;
+    width: 0;
+    left: 0;
+    height: 3px;
+    background: white;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+}
+nav ul li:hover::before{
+    opacity: 1;
+    width: 100%;
+}
+.btn{
+    color: white;
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: none; 
+}
+.signIn{
+    display: flex;
+    align-items: center;
+}
+.signInbtn{
+    background-color: skyblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: max-content;
+}
+.signInbtn:hover {
+    transform: scale(1.1);
+    transition: all 0.8s ease-in-out;
+}
+.signInbtn:active{
+    transform: scale(0.9);
+    transition: all 0.8s ease-in;
+}
+main{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.swiper{
+    height: 100vh;
+}
+.slide-container{
+    width: 100%;
+}
+.slide-container image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.image-overlay{
+    position: absolute;
+    z-index: 5;
+    top: 50% ;
+    left: 50%;
+    text-align: center;
+    width: 100%;
+    font-family: "ubuntu";
+    transform: translate(-50%, -50%);
+}
+.image-overlay p{
+    color: white;
+    letter-spacing: 8px;
+    font-size: 1rem;
+    animation: animate 4s forwards;}
+.image-overlay h2{
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 8px;
+    animation: animate 4s forwards;
+    transition: all 0.5s ease-in-out;
+}
+.overlay{
+    position: relative;
+}
+.overlay::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+@keyframes animate {
+    0%{
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.2;
+    }
+    70%{
+        opacity: 0.5;
+    }
+    70%{
+        opacity: 1;
+        transform: translateX(-0%);
+    }
+}
+.image-overlay h2 span{
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+#location-search{
+    transform: translateY(-170%);
+    width: 92%;
+}
+.form-wrapper{
+    background-color: rgba(0,0,0,0.4);
+    padding: 2rem;
+    width: 100%;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-control{
+    width: 100%;
+}
+form input,select{
+    padding: 0.6rem;
+    outline: none;
+    font-size: 1.1rem;
+    color: black;
+    border: 1px solid lightgray;
+    margin: 0 0.4rem;
+    border-radius: 4px;
+}
+/* about start*/
+.about-content-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 3rem;
+    margin: 3rem 0;
+}
+.about-content-wrapper h2 span{
+    color: skyblue;
+    font-family: "ubuntu";
+}
+.about-content-wrapper ul{
+    list-style: none;
+}
+.about-content-wrapper ul.icons{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    background-color: skyblue;
+}
+.about-content-wrapper ul.icons i{
+    background: skyblue;
+    padding: 0.8rem;
+    border-radius: 50%;
+    color: white;
+}
+.about-content-wrapper ul p{
+    margin-left: 1rem;
+}
+.agency-right-side .img{
+    position: relative;
+}
+.agency-right-side .img img{
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    transition: 0.5s ease-in;
+}
+.agency-right-side .img::after{
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 55px;
+    bottom: 0;
+    right: 0;
+    background: skyblue;
+    width: 70%;
+    height: 100%;
+    z-index: -2;
+}
+.agency-right-side .img img:hover{
+    transform: scale(0.95);
+}
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.LEAD {
+        font-family: Arial, sans-serif;
+    }
+    
+
+/*choose place*/
+#chose-space{
+    padding: 6rem 0;
+}
+.choose-wrapper{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 2rem;
+}
+.lg-img{
+    position: relative;
+    transition: all 0.5s;
+    cursor: pointer;
+    width: 100%;
+    height: 96%;
+}
+.lg-img:hover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+.lg-img:hover{
+    transform: scale(1.02);
+}
+.img-content{
+    position: absolute;
+    bottom: 20px;
+}
+.img-content h2{
+    color: white;
+    padding: 0 2rem;
+}
+.hidden-content{
+    padding: 0.8rem 2rem;
+    color: white;
+    transform: translateY(120%);
+    transition: all 0.5s ease-in-out;
+}
+.lg-img:hover .hidden-content{
+    transform: translateY(0%);
+}
+.price-level{
+    background: skyblue;
+    color: white;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    transform: rotate(-90deg);
+}
+.row-wise-image{    
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem;
+}
+/*static counter*/
+#static-counter{
+    padding: 6rem 0;
+    background: url("images/staticcounter2.jpeg") no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 6;
+}
+#static-counter::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+.static-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 2rem;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem 0;
+}
+.static-icon {
+    color: white;
+    cursor: pointer;
+}
+.static-icon i{
+    font-size: 3rem;
+    padding: 2rem;
+    border-radius: 50%;
+    border: 2px solid skyblue;
+    cursor: pointer;
+}
+.numbers{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+.static-icon i:hover{
+    background: skyblue;
+    border: none;
+    transform: translateY(-20%);
+    transition: all 0.5s ease-in-out;
+}
+/*top destination*/
+#top-destination{
+    padding: 6rem 0;
+}
+.top-destination-wrapper{
+    width: 100%;
+}
+.carousel{
+    position: relative;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 90%;
+}
+.carousel:hover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+.carousel-img-overlay{
+    width: 50%;
+}
+.hidden-content2{
+    padding: 5rem 2rem;
+    color: white;
+    transform: translateY(120%);
+    transition: all 0.5s ease-in-out;
+}
+.carousel-img-overlay i{
+    padding-right: 1rem;
+}
+.carousel:hover .hidden-content2{
+    transform: translateY(0%);
+}
+#top-destination{
+    padding: 6rem 0;
+}
+.choose-wrapper2{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 2rem;
+}
+/*VIDEO*/
+#Aryan{
+    padding: 3rem 0;
+    position: relative;
+
+}
+#Aryan video{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 96%;
+    object-fit: cover;
+    max-height: 400px;
+
+}
+.video-bg{
+    margin-left: 30px;
+    position: relative;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+.video-content{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+.video-content h2{
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    color: white;
+    margin-bottom: 0rem;
+}
+.video-content span{
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    color: white;
+}
+/*TRAVEL COUNTRIES*/
+#travel-countries{
+    padding: 3rem 0;
+}
+.TRAVEL-COUNTRY-WRAPPER{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    width: 100%;
+    grid-gap:2rem ;
+}
+.COUNTRIES-CONTENT{
+    margin-top: -1rem;
+}
+.COUNTRIES-CONTENT ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+.COUNTRIES-CONTENT ul li{
+    margin: 1.5rem 0;
+}
+.COUNTRIES-CONTENT ul li i{
+    margin: 0rem 0.5rem;
+}
+.slider-content-wrapper{
+    overflow: hidden;
+}
+/*footer*/
+#FOOTER{
+    padding: 3rem 0;
+    background: #0f2454;
+}
+.footer-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid lightgray;
+}
+.ft-content{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem ;
+    color: white;
+}
+.icon{
+    padding: 1rem;
+    font-size:2.5rem ;
+    background: skyblue;
+}
+.content{
+    padding: 1rem;
+}
+.footer-wraper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 2rem 0;
+    grid-gap: 2rem;
+    color: white;
+    margin: 4rem 0;
+}
+.about img{
+    width: 50%;
+    object-fit: cover;
+}
+.social-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.social-icons i{
+    background: skyblue  ;
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.about .lead{
+    font-size: 0.95rem;
+    margin-top: 1rem;
+}
+.links ul li{
+    margin: 1rem;
+    font-size: 1rem;
+}
+.links ul li a{
+    color: white;
+}
+.subscribe .lead{
+    font-size: 1.1rem;
+    letter-spacing: 1;
+}
+form{
+    position: relative;
+}
+.subscribe input{
+    width: 100%;
+    outline: none;
+    border: 1px solid lightgray;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+.subscribe button{
+    display: block;
+    position: absolute;
+    top:35%;
+    right: 4%;
+    padding: 0.5rem 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: skyblue;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+}
+.footer{
+    border-top: 1px solid lightgray;
+}
+.footer p{
+    text-align: center;
+    padding: 1rem 0;
+    color: white;
+}
+#blog{
+    padding: 6rem 0;
+    width: 100%;
+    background: url("images/blog.jpeg") no-repeat center center/cover  ;
+    background-attachment: fixed;
+}
+#blog .headings{
+    color: white;
+}
+.heading-normal-text2{
+    color: white;
+}
+.testinomials-wrapper{
+    overflow: hidden;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding:2rem 6rem ;
+}
+.testinomials-wrapper i{
+    color: skyblue;
+
+}
+.testinomials-wrapper p{
+    text-align: center;
+}
+.test-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.test-img img{
+    width: 20%;
+    object-fit: cover;
+    margin: 1rem 0;
+}
+.icons2{
+     text-align: center;  
+}
